@@ -2,6 +2,9 @@
 //          and how to easily highlight them if you want.
 //
 
+/// <reference types="tree-sitter-cli/dsl" />
+// @ts-check
+
 const PREC = {
   COMMA: -1,
   FUNCTION: 1,
@@ -26,8 +29,6 @@ const PREC = {
   STATEMENT: 17,
   PROGRAM: 18,
 };
-
-EQUALS_LEVELS = 5;
 
 module.exports = grammar({
   name: "pluto",
@@ -56,7 +57,7 @@ module.exports = grammar({
 
   conflicts: ($) => [
     [$.variable_declarator, $._prefix_exp],
-    [$.emmy_ignore, $.emmy_comment],
+    // [$.emmy_ignore, $.emmy_comment],
   ],
 
   rules: {
@@ -68,11 +69,11 @@ module.exports = grammar({
           any_amount_of(
             choice(
               $._statement,
-              $._documentation_brief_container,
-              $.documentation_command,
-              $._documentation_tag_container,
-              $._documentation_config_container,
-              $.documentation_class
+              // $._documentation_brief_container,
+              // $.documentation_command,
+              // $._documentation_tag_container,
+              // $._documentation_config_container,
+              // $.documentation_class
             )
           ),
           optional(alias($.return_statement, $.module_return_statement)),
@@ -99,7 +100,8 @@ module.exports = grammar({
             $.repeat_statement,
             $.if_statement,
             $.for_statement,
-            $.function_statement
+            $.function_statement,
+            $.pipeline
             // $.comment
           ),
           optional(";")
@@ -130,7 +132,7 @@ module.exports = grammar({
           $.prefix_exp,
           $.tableconstructor,
           $.binary_operation,
-          $.unary_operation
+          $.unary_operation,
         )
       ),
 
@@ -213,7 +215,7 @@ module.exports = grammar({
           ["<=", PREC.COMPARE],
           ["==", PREC.COMPARE],
           ["!=", PREC.COMPARE],
-          ["~=", PREC.COMPARE]
+          ["~=", PREC.COMPARE],
           [">=", PREC.COMPARE],
           [">", PREC.COMPARE],
           ["<=>", PREC.COMPARE],
@@ -227,16 +229,16 @@ module.exports = grammar({
           ["*", PREC.MULTI],
           ["/", PREC.MULTI],
           ["//", PREC.MULTI],
-          ["%", PREC.MULTI]
+          ["%", PREC.MULTI],
+          ["|>", PREC.PIPE]
         ].map(([operator, precedence]) =>
-          prec.left(precedence, seq($._expression, operator, $._expression))
+          prec.left(precedence, seq($._expression, operator, precedence === PREC.PIPE ? $._expression_pipeline : $._expression))
         ),
         ...[
           ["..", PREC.CONCAT],
           ["^", PREC.POWER],
           ["**", PREC.POWER],
-          ["??", PREC.NIL_COALESCING],
-          ["|>", PREC.PIPE]
+          ["??", PREC.NIL_COALESCING]
         ].map(([operator, precedence]) =>
           prec.right(precedence, seq($._expression, operator, $._expression))
         )
@@ -251,7 +253,7 @@ module.exports = grammar({
       prec.right(
         PREC.DEFAULT,
         seq(
-          field("documentation", optional($.emmy_documentation)),
+          // field("documentation", optional($.emmy_documentation)),
           optional($.local),
           list_of(field("name", $.variable_declarator), ",", false),
           optional(seq("=", list_of(field("value", $._expression), ",", false)))
@@ -371,7 +373,7 @@ module.exports = grammar({
       prec.right(
         PREC.DEFAULT,
         seq(
-          field("documentation", optional($.emmy_documentation)),
+          // field("documentation", optional($.emmy_documentation)),
           choice(
             seq(
               alias("local", $.local),
@@ -487,6 +489,31 @@ module.exports = grammar({
 
     _comma: (_) => ",",
     // }}}
+
+
+    // Pluto
+
+    function_name_pipeline: $ => prec.left(choice(
+      $.identifier,
+      $.function_name,
+      seq($.function_name, "|", field("args", optional($.function_arguments)), "|")
+    )),
+    
+    _expression_pipeline: $ =>
+      prec.left(
+        choice(
+          $._expression,
+          $.function_name_pipeline
+        )
+      ),
+
+    pipeline: $ => seq(
+      $._expression,
+      repeat1(seq(
+        "|>",
+        $._expression_pipeline
+      ))
+    ),
 
     /// Disable documentation
     // // Documentation {{{

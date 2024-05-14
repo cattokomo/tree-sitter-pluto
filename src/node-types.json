@@ -28,6 +28,10 @@
           "named": true
         },
         {
+          "type": "function_name_pipeline",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -64,11 +68,6 @@
   },
   {
     "type": "boolean",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "class_description",
     "named": true,
     "fields": {}
   },
@@ -113,6 +112,10 @@
           "named": true
         },
         {
+          "type": "pipeline",
+          "named": true
+        },
+        {
           "type": "repeat_statement",
           "named": true
         },
@@ -130,753 +133,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "documentation_brief",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "documentation_class",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "emmy_class",
-          "named": true
-        },
-        {
-          "type": "emmy_field",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "documentation_command",
-    "named": true,
-    "fields": {
-      "documentation": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "documentation_command_content",
-            "named": true
-          }
-        ]
-      },
-      "usage": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "documentation_usage",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "documentation_config",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "binary_operation",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "ellipsis",
-          "named": true
-        },
-        {
-          "type": "function",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "left_paren",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "right_paren",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tableconstructor",
-          "named": true
-        },
-        {
-          "type": "unary_operation",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "documentation_tag",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_class",
-    "named": true,
-    "fields": {
-      "description": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "class_description",
-            "named": true
-          }
-        ]
-      },
-      "parent": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      },
-      "type": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_documentation",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "emmy_class",
-          "named": true
-        },
-        {
-          "type": "emmy_eval",
-          "named": true
-        },
-        {
-          "type": "emmy_field",
-          "named": true
-        },
-        {
-          "type": "emmy_header",
-          "named": true
-        },
-        {
-          "type": "emmy_ignore",
-          "named": true
-        },
-        {
-          "type": "emmy_note",
-          "named": true
-        },
-        {
-          "type": "emmy_parameter",
-          "named": true
-        },
-        {
-          "type": "emmy_return",
-          "named": true
-        },
-        {
-          "type": "emmy_see",
-          "named": true
-        },
-        {
-          "type": "emmy_todo",
-          "named": true
-        },
-        {
-          "type": "emmy_typedecl",
-          "named": true
-        },
-        {
-          "type": "emmy_usage",
-          "named": true
-        },
-        {
-          "type": "emmy_varargs",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "emmy_eval",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "binary_operation",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "ellipsis",
-          "named": true
-        },
-        {
-          "type": "function",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "left_paren",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "right_paren",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tableconstructor",
-          "named": true
-        },
-        {
-          "type": "unary_operation",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "emmy_field",
-    "named": true,
-    "fields": {
-      "description": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "field_description",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      },
-      "visibility": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "emmy_visibility",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_function",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "emmy_function_parameter",
-          "named": true
-        },
-        {
-          "type": "emmy_identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "emmy_function_parameter",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_literal",
-    "named": true,
-    "fields": {
-      "content": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "string_content",
-            "named": false
-          }
-        ]
-      },
-      "end": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "string_end",
-            "named": false
-          }
-        ]
-      },
-      "start": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "string_start",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_note",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_parameter",
-    "named": true,
-    "fields": {
-      "description": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "parameter_description",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "ellipsis",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_return",
-    "named": true,
-    "fields": {
-      "description": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "emmy_return_description",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_return_description",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_see",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_todo",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_type",
-    "named": true,
-    "fields": {
-      "nullable": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "?",
-            "named": false
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "emmy_function",
-          "named": true
-        },
-        {
-          "type": "emmy_identifier",
-          "named": true
-        },
-        {
-          "type": "emmy_literal",
-          "named": true
-        },
-        {
-          "type": "emmy_type_array",
-          "named": true
-        },
-        {
-          "type": "emmy_type_dictionary",
-          "named": true
-        },
-        {
-          "type": "emmy_type_key_value",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "emmy_type_array",
-    "named": true,
-    "fields": {
-      "type": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_type_dictionary",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "emmy_type_dictionary_value",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "emmy_type_dictionary_value",
-    "named": true,
-    "fields": {
-      "key": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "[",
-            "named": false
-          },
-          {
-            "type": "]",
-            "named": false
-          },
-          {
-            "type": "binary_operation",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "ellipsis",
-            "named": true
-          },
-          {
-            "type": "function",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "left_paren",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "right_paren",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tableconstructor",
-            "named": true
-          },
-          {
-            "type": "unary_operation",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_type_key_value",
-    "named": true,
-    "fields": {
-      "key": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      },
-      "value": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "emmy_type",
-            "named": true
-          },
-          {
-            "type": "|",
-            "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "emmy_typedecl",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_usage",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_varargs",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "emmy_visibility",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "field",
@@ -1053,11 +309,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "field_description",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "field_left_bracket",
@@ -1463,6 +714,10 @@
           "named": true
         },
         {
+          "type": "pipeline",
+          "named": true
+        },
+        {
           "type": "repeat_statement",
           "named": true
         },
@@ -1608,6 +863,10 @@
           "named": true
         },
         {
+          "type": "pipeline",
+          "named": true
+        },
+        {
           "type": "repeat_statement",
           "named": true
         },
@@ -1625,11 +884,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "function_body_paren",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "function_call",
@@ -1744,11 +998,6 @@
     }
   },
   {
-    "type": "function_call_paren",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "function_name",
     "named": true,
     "fields": {},
@@ -1772,19 +1021,39 @@
     }
   },
   {
-    "type": "function_statement",
+    "type": "function_name_pipeline",
     "named": true,
     "fields": {
-      "documentation": {
+      "args": {
         "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "emmy_documentation",
+            "type": "function_arguments",
             "named": true
           }
         ]
-      },
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "function_name",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function_statement",
+    "named": true,
+    "fields": {
       "name": {
         "multiple": false,
         "required": true,
@@ -1936,6 +1205,10 @@
           "named": true
         },
         {
+          "type": "pipeline",
+          "named": true
+        },
+        {
           "type": "repeat_statement",
           "named": true
         },
@@ -2039,11 +1312,6 @@
     }
   },
   {
-    "type": "parameter_description",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "parameter_list",
     "named": true,
     "fields": {},
@@ -2063,6 +1331,73 @@
     }
   },
   {
+    "type": "pipeline",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_operation",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "ellipsis",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_name_pipeline",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "left_paren",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "right_paren",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tableconstructor",
+          "named": true
+        },
+        {
+          "type": "unary_operation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "program",
     "named": true,
     "fields": {},
@@ -2072,26 +1407,6 @@
       "types": [
         {
           "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "documentation_brief",
-          "named": true
-        },
-        {
-          "type": "documentation_class",
-          "named": true
-        },
-        {
-          "type": "documentation_command",
-          "named": true
-        },
-        {
-          "type": "documentation_config",
-          "named": true
-        },
-        {
-          "type": "documentation_tag",
           "named": true
         },
         {
@@ -2112,6 +1427,10 @@
         },
         {
           "type": "module_return_statement",
+          "named": true
+        },
+        {
+          "type": "pipeline",
           "named": true
         },
         {
@@ -2195,6 +1514,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "pipeline",
           "named": true
         },
         {
@@ -2302,11 +1625,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "right_paren",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "string",
@@ -2477,16 +1795,6 @@
     "type": "variable_declaration",
     "named": true,
     "fields": {
-      "documentation": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "emmy_documentation",
-            "named": true
-          }
-        ]
-      },
       "name": {
         "multiple": true,
         "required": true,
@@ -2707,6 +2015,10 @@
           "named": true
         },
         {
+          "type": "pipeline",
+          "named": true
+        },
+        {
           "type": "repeat_statement",
           "named": true
         },
@@ -2758,6 +2070,14 @@
     "named": false
   },
   {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
     "type": "#",
     "named": false
   },
@@ -2770,11 +2090,11 @@
     "named": false
   },
   {
-    "type": ")",
+    "type": "*",
     "named": false
   },
   {
-    "type": "*",
+    "type": "**",
     "named": false
   },
   {
@@ -2806,10 +2126,6 @@
     "named": false
   },
   {
-    "type": ":",
-    "named": false
-  },
-  {
     "type": ";",
     "named": false
   },
@@ -2823,6 +2139,10 @@
   },
   {
     "type": "<=",
+    "named": false
+  },
+  {
+    "type": "<=>",
     "named": false
   },
   {
@@ -2846,19 +2166,11 @@
     "named": false
   },
   {
-    "type": "?",
-    "named": false
-  },
-  {
-    "type": "@comment",
+    "type": "??",
     "named": false
   },
   {
     "type": "[",
-    "named": false
-  },
-  {
-    "type": "[]",
     "named": false
   },
   {
@@ -2898,23 +2210,7 @@
     "named": true
   },
   {
-    "type": "documentation_command_content",
-    "named": true
-  },
-  {
-    "type": "documentation_usage",
-    "named": true
-  },
-  {
     "type": "ellipsis",
-    "named": true
-  },
-  {
-    "type": "emmy_header",
-    "named": true
-  },
-  {
-    "type": "emmy_ignore",
     "named": true
   },
   {
@@ -2938,12 +2234,12 @@
     "named": true
   },
   {
-    "type": "fun(",
-    "named": false
+    "type": "function_body_paren",
+    "named": true
   },
   {
-    "type": "function(",
-    "named": false
+    "type": "function_call_paren",
+    "named": true
   },
   {
     "type": "function_end",
@@ -2998,18 +2294,6 @@
     "named": false
   },
   {
-    "type": "private",
-    "named": false
-  },
-  {
-    "type": "protected",
-    "named": false
-  },
-  {
-    "type": "public",
-    "named": false
-  },
-  {
     "type": "repeat_start",
     "named": true
   },
@@ -3020,6 +2304,10 @@
   {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "right_paren",
+    "named": true
   },
   {
     "type": "self_call_colon",
@@ -3039,10 +2327,6 @@
   },
   {
     "type": "string_start",
-    "named": false
-  },
-  {
-    "type": "table<",
     "named": false
   },
   {
@@ -3075,6 +2359,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "|>",
     "named": false
   },
   {
