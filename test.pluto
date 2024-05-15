@@ -1,4 +1,7 @@
 local test = hi ?? hello
 
-local test = "hey" |> string.upper
-test |> print
+local test = "hey"
+			 |> string.upper
+			 |> string.gsub|".+", ""|
+test
+|> print

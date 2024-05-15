@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-lua
+module github.com/tree-sitter/tree-sitter-pluto
 
 go 1.22
 

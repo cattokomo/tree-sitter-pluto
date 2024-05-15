@@ -1,6 +1,6 @@
 VERSION := 0.0.1
 
-LANGUAGE_NAME := tree-sitter-lua
+LANGUAGE_NAME := tree-sitter-pluto
 
 # repository
 SRC_DIR := src
